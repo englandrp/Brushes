@@ -40,11 +40,13 @@
 - (void) dealloc
 {
     if (dispatchQueue_) {
-        dispatch_release(dispatchQueue_);
+// removed, as predates ARC
+//        dispatch_release(dispatchQueue_);
     }
     
     if (dispatchGroup_) {
-        dispatch_release(dispatchGroup_);
+// removed, as predates ARC
+//        dispatch_release(dispatchGroup_);
     }
 }
 
