@@ -102,6 +102,8 @@ typedef enum {
 - (void) updateTitle;
 - (void) hidePopovers;
 
+- (void) setCanvasPainting;
+
 - (BOOL) shouldDismissPopoverForClassController:(Class)controllerClass insideNavController:(BOOL)insideNav;
 - (void) showController:(UIViewController *)controller fromBarButtonItem:(UIBarButtonItem *)barButton animated:(BOOL)animated;
 - (UIPopoverController *) runPopoverWithController:(UIViewController *)controller from:(id)sender;

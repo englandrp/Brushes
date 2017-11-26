@@ -420,16 +420,16 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 }
 
 - (void) createNewPainting:(CGSize)size
-{   
-    [self dismissPopoverAnimated:NO];
+{
+    [self dismissPopoverAnimated:YES];
     
-    WDCanvasController *canvasController = [[WDCanvasController alloc] init];
-    [self.navigationController pushViewController:canvasController animated:YES];
+//    WDCanvasController *canvasController = [[WDCanvasController alloc] init];
+//    [self.navigationController pushViewController:canvasController animated:YES];
     
     [[WDPaintingManager sharedInstance] createNewPaintingWithSize:size afterSave:^(WDDocument *document) {
-        // set the document before setting the editing flag
-        canvasController.document = document;
-        canvasController.editing = YES;
+    
+        [self openDocument:document editing:YES];
+        
     }];
 
     [gridView scrollToBottom];

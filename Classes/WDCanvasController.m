@@ -709,6 +709,7 @@
     
     NSMutableArray *passthroughs = [NSMutableArray arrayWithObjects:self.topBar, self.bottomBar, nil];
     if (self.isEditing) {
+        [self setCanvasPainting];
         [passthroughs addObject:self.canvas];
     }
     popoverController_.passthroughViews = passthroughs;
@@ -926,12 +927,16 @@
                     [self setUserInteractionEnabled:YES];
                 });
             }];
+            
             self.replay = nil;
         } else if (!self.document) {
             [NSException raise:@"No replay or document" format:@"Either replay or document should not be nil"];
         } else {
+            [self.progressIndicator resetProgress];
             [self setInterfaceMode:WDInterfaceModeEdit];
+            [self setUserInteractionEnabled:YES];
             [self enableItems];
+            
         }
     } else {
         [self setInterfaceMode:WDInterfaceModePlay];
@@ -1247,6 +1252,7 @@
             self.canvasSettings = nil;
         }
     }
+    
 }
 
 - (void) viewWillUnload
@@ -1258,6 +1264,21 @@
     
     // cache the canvas zoom and position so that we can restore it
     self.canvasSettings = [canvas_ viewSettings];
+}
+
+- (void) setCanvasPainting {
+    if (self.painting) {
+        canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        canvas_.painting = self.painting;
+        canvas_.controller = self;
+        
+        [[WDStylusManager sharedStylusManager].pogoManager registerView:canvas_];
+        
+        if (self.canvasSettings) {
+            [canvas_ updateFromSettings:self.canvasSettings];
+            self.canvasSettings = nil;
+        }
+    }
 }
 
 - (void) sliderUnlocked:(id)sender
