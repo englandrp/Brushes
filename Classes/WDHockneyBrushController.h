@@ -1,5 +1,5 @@
 //
-//  WDBrushController.h
+//  WDHockneyBrushController.h
 //  Brushes
 //
 //  This Source Code Form is subject to the terms of the Mozilla Public
@@ -17,7 +17,7 @@
 @class WDPropertyCell;
 @class WDStampPicker;
 
-@interface WDBrushController : UIViewController <UITableViewDelegate, UITableViewDataSource> 
+@interface WDHockneyBrushController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray      *toolbarItems_;
     WDBarItem           *randomize_;
@@ -30,6 +30,5 @@
 @property (nonatomic, weak) WDBar *topBar;
 @property (nonatomic, weak) WDBar *bottomBar;
 @property (nonatomic, weak) WDBrush *brush;
-@property (nonatomic, weak) id delegate;
 
 @end

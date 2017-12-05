@@ -21,6 +21,8 @@
 #import "WDBezierNode.h"
 #import "WDBrush.h"
 #import "WDBrushesController.h"
+#import "WDHockneyBrushController.h"
+#import "WDHockneyBrushesController.h"
 #import "WDCanvas.h"
 #import "WDCanvasController.h"
 #import "WDCodingProgress.h"
@@ -615,6 +617,80 @@
     [self showController:self.brushController fromBarButtonItem:sender animated:YES];
 }
 
+- (void) showOldBrushPanel:(id)sender
+{
+    
+    if ([self shouldDismissPopoverForClassController:[WDHockneyBrushesController class] insideNavController:YES]) {
+        [self hidePopovers];
+        return;
+    }
+    WDHockneyBrushesController *brushController;
+//    if (!self.brushController) {
+        brushController = [[WDHockneyBrushesController alloc] initWithNibName:@"HockneyBrushes" bundle:nil];
+        brushController.delegate = self;
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:brushController];
+        self.brushController = navController;
+        
+//    }
+    
+    [self showController:self.brushController fromBarButtonItem:sender animated:YES];
+//    WDHockneyBrushesController brushController = self.brushController;
+    [brushController showFirstBrush];
+    
+    
+    //
+    /*
+    if ([self shouldDismissPopoverForClassController:[WDHockneyBrushController class] insideNavController:YES]) {
+        [self hidePopovers];
+        return;
+    }
+    
+    [self showController:self.hockneyBrushController fromBarButtonItem:sender animated:YES];
+    
+    [[WDActiveState sharedInstance] selectBrushAtIndex:0];
+    
+    WDHockneyBrushController *brushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
+    brushController.brush = [[WDActiveState sharedInstance] brushAtIndex:0];
+    
+    [self.navigationController pushViewController:brushController animated:YES];
+    */
+    //
+    /*
+    if ([self shouldDismissPopoverForClassController:[WDHockneyBrushController class] insideNavController:YES]) {
+        [self hidePopovers];
+        return;
+    }
+    
+    if (!self.brushController) {
+        
+        [[WDActiveState sharedInstance] selectBrushAtIndex:0];
+        
+        WDHockneyBrushController *hockneyBrushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
+        hockneyBrushController.delegate = self;
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hockneyBrushController];
+        self.hockneyBrushController = navController;
+    }
+    */
+    //
+    /*
+    if ([self shouldDismissPopoverForClassController:[WDHockneyBrushController class] insideNavController:YES]) {
+        [self hidePopovers];
+        return;
+    }
+    
+    [self showController:self.hockneyBrushController fromBarButtonItem:sender animated:YES];
+    
+    [[WDActiveState sharedInstance] selectBrushAtIndex:0];
+    
+    WDHockneyBrushController *brushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
+    brushController.brush = [[WDActiveState sharedInstance] brushAtIndex:0];
+    
+    [self.navigationController pushViewController:brushController animated:YES];
+     */
+}
+
 - (void) showColorPicker:(id)sender
 {
     if ([self shouldDismissPopoverForClassController:[WDColorPickerController class] insideNavController:NO]) {
@@ -1120,6 +1196,11 @@
                                                 target:self
                                                 action:@selector(showBrushPanel:)];
     
+    WDBarItem *oldStyleBrushItem = [WDBarItem barItemWithImage:[UIImage imageNamed:@"style.png"]
+                                        landscapeImage:[UIImage imageNamed:@"styleLandscape.png"]
+                                                target:self
+                                                action:@selector(showOldBrushPanel:)];
+    
     gear_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"gear.png"]
                          landscapeImage:[UIImage imageNamed:@"gearLandscape.png"]
                                  target:self
@@ -1142,7 +1223,8 @@
     if (self.runningOnPhone) {
         items = [NSMutableArray arrayWithObjects:
                  colorItem, [WDBarItem flexibleItem],
-                 brushItem, [WDBarItem flexibleItem],
+//                 brushItem, [WDBarItem flexibleItem],
+                 oldStyleBrushItem, [WDBarItem flexibleItem],
                  undo_, [WDBarItem flexibleItem],
                  redo_, [WDBarItem flexibleItem],
                  gear_, [WDBarItem flexibleItem],
@@ -1155,9 +1237,9 @@
         [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
         
         [items addObjectsFromArray:@[[WDBarItem flexibleItem],
-                                    brushItem, [WDBarItem flexibleItem],
-                                    brushSizeItem, 
-                                    [WDBarItem flexibleItem],
+//                                    brushItem, [WDBarItem flexibleItem],
+                                    oldStyleBrushItem, [WDBarItem flexibleItem],
+                                    brushSizeItem, [WDBarItem flexibleItem],
                                     undo_, fixed,
                                     redo_, fixed,
                                     gear_, fixed,

@@ -14,7 +14,7 @@
 #import "WDUtilities.h"
 
 #define kScrollViewHeight       80
-#define kIndicatorBaseHeight    100
+#define kIndicatorBaseHeight    200
 #define kPointDepth             15
 #define kButtonOutset           10.0f
 

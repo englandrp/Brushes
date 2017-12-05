@@ -13,19 +13,19 @@
 #import "WDBar.h"
 #import "WDBarSlider.h"
 #import "WDBrush.h"
-#import "WDBrushController.h"
-#import "WDBrushesController.h"
+#import "WDHockneyBrushController.h"
+#import "WDHockneyBrushesController.h"
 #import "WDBrushCell.h"
 #import "UIImage+Additions.h"
 
 #define kRowHeight 100
 
-@interface WDBrushesController ()
+@interface WDHockneyBrushesController ()
 - (void) configureNavBar;
 - (void) selectActiveBrush;
 @end
 
-@implementation WDBrushesController
+@implementation WDHockneyBrushesController
 
 @synthesize brushTable;
 @synthesize brushCell;
@@ -45,6 +45,8 @@
     self.title = NSLocalizedString(@"Brushes", @"Brushes");
     
     [self configureNavBar];
+    
+    [self showFirstBrush];
     
     return self;
 }
@@ -74,10 +76,6 @@
                                                                  action:@selector(duplicateBrush:)];
     
     self.navigationItem.rightBarButtonItems = @[add, duplicate];
-    
-    [[WDActiveState sharedInstance] selectBrushAtIndex:0];
-    
-    
 }
 
 - (void) scrollToSelectedRowIfNotVisible
@@ -191,8 +189,18 @@
 {
     [[WDActiveState sharedInstance] selectBrushAtIndex:indexPath.row];
     
-    WDBrushController *brushController = [[WDBrushController alloc] initWithNibName:@"Brush" bundle:nil];
+    WDHockneyBrushController *brushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
     brushController.brush = [[WDActiveState sharedInstance] brushAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:brushController animated:YES];
+}
+
+- (void) showFirstBrush
+{
+    [[WDActiveState sharedInstance] selectBrushAtIndex:0];
+    
+    WDHockneyBrushController *brushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
+    brushController.brush = [[WDActiveState sharedInstance] brushAtIndex:0];
     
     [self.navigationController pushViewController:brushController animated:YES];
 }

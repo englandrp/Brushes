@@ -1,5 +1,5 @@
 //
-//  WDBrushController.m
+//  WDHockneyBrushController.m
 //  Brushes
 //
 //  This Source Code Form is subject to the terms of the Mozilla Public
@@ -13,12 +13,12 @@
 #import "WDActiveState.h"
 #import "WDBar.h"
 #import "WDBrush.h"
-#import "WDBrushController.h"
+#import "WDHockneyBrushController.h"
 #import "WDPropertyCell.h"
 #import "WDStampPicker.h"
 #import "WDUtilities.h"
 
-@implementation WDBrushController
+@implementation WDHockneyBrushController
 
 @synthesize propertyTable;
 @synthesize propertyCell;
@@ -27,7 +27,6 @@
 @synthesize picker;
 @synthesize topBar;
 @synthesize bottomBar;
-@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -158,14 +157,14 @@
     static NSString *cellIdentifier = @"PropertyCell";
     
     WDPropertyCell *cell = (WDPropertyCell *) [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+
     if (cell == nil) {
         NSString *nibName = WDUseModernAppearance() ? @"PropertyCell~iOS7" : @"PropertyCell";
         [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
         cell = propertyCell;
         propertyCell = nil;
     }
-    
+
     cell.property = [brush propertiesForGroupAtIndex:indexPath.section][indexPath.row];
     
     return cell;

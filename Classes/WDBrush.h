@@ -24,6 +24,8 @@
 @property (nonatomic, strong) WDStampGenerator *generator;
 @property (nonatomic) UIImage *noise;
 
+@property (nonatomic) WDProperty *size;
+
 @property (nonatomic) WDProperty *weight;             // [1.0, 512.0] -- pixels
 @property (nonatomic) WDProperty *intensity;          // [0.0, 1.0]
 
@@ -51,6 +53,7 @@
 - (NSUInteger) numberOfPropertyGroups;
 - (NSArray *) propertiesForGroupAtIndex:(NSUInteger)ix;
 - (NSArray *) allProperties;
+- (NSArray *) allPropertiesVisibility;
 
 - (void) restoreDefaults;
 
