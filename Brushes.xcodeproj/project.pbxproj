@@ -45,6 +45,7 @@
 		650EE3961FD596D00093AC82 /* WDHockneyBrushesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650EE3941FD596CE0093AC82 /* WDHockneyBrushesController.m */; };
 		650EE3981FD5F6380093AC82 /* HockneyBrush.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650EE3971FD5F6370093AC82 /* HockneyBrush.xib */; };
 		650EE39B1FD5F6B10093AC82 /* WDHockneyBrushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650EE3991FD5F6AF0093AC82 /* WDHockneyBrushController.m */; };
+		6546BE961FDAA8B9007F7202 /* WDOldBrushGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6546BE941FDAA8B8007F7202 /* WDOldBrushGenerator.m */; };
 		6B00DA531405F65F00E45409 /* WDActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA521405F65E00E45409 /* WDActivity.m */; };
 		6B00DA5A1406022B00E45409 /* WDActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA591406022B00E45409 /* WDActivityManager.m */; };
 		6B00DA5D140604CE00E45409 /* WDActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA5C140604CE00E45409 /* WDActivityController.m */; };
@@ -490,6 +491,8 @@
 		650EE3971FD5F6370093AC82 /* HockneyBrush.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HockneyBrush.xib; path = XIB/HockneyBrush.xib; sourceTree = "<group>"; };
 		650EE3991FD5F6AF0093AC82 /* WDHockneyBrushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHockneyBrushController.m; sourceTree = "<group>"; };
 		650EE39A1FD5F6B00093AC82 /* WDHockneyBrushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHockneyBrushController.h; sourceTree = "<group>"; };
+		6546BE941FDAA8B8007F7202 /* WDOldBrushGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDOldBrushGenerator.m; sourceTree = "<group>"; };
+		6546BE951FDAA8B9007F7202 /* WDOldBrushGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDOldBrushGenerator.h; sourceTree = "<group>"; };
 		6B00DA511405F65E00E45409 /* WDActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivity.h; sourceTree = "<group>"; };
 		6B00DA521405F65E00E45409 /* WDActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDActivity.m; sourceTree = "<group>"; };
 		6B00DA581406022B00E45409 /* WDActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivityManager.h; sourceTree = "<group>"; };
@@ -1211,6 +1214,8 @@
 				6B40CDE5181FD10E00004FB2 /* WDBlendModes.m */,
 				6B40CDE6181FD10E00004FB2 /* WDBristleGenerator.h */,
 				6B40CDE7181FD10E00004FB2 /* WDBristleGenerator.m */,
+				6546BE951FDAA8B9007F7202 /* WDOldBrushGenerator.h */,
+				6546BE941FDAA8B8007F7202 /* WDOldBrushGenerator.m */,
 				6B40CDE8181FD10E00004FB2 /* WDBrush.h */,
 				6B40CDE9181FD10E00004FB2 /* WDBrush.m */,
 				6B40CDEA181FD10E00004FB2 /* WDCirclesGenerator.h */,
@@ -2345,6 +2350,7 @@
 				6B40CE60181FD1C200004FB2 /* WDDictionaryDecoder.m in Sources */,
 				6B40CDAC181FD03B00004FB2 /* WDTool.m in Sources */,
 				6BD595B615252D920014A798 /* WDToolButton.m in Sources */,
+				6546BE961FDAA8B9007F7202 /* WDOldBrushGenerator.m in Sources */,
 				6BD595C6152E62C50014A798 /* WDImageButton.m in Sources */,
 				6BE9BA3B15328F7E0085EBA8 /* WDActionSheet.m in Sources */,
 				6B40CE2E181FD10F00004FB2 /* WDCrossHatchGenerator.m in Sources */,

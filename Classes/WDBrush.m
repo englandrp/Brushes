@@ -292,16 +292,16 @@ static NSString *WDUUIDKey = @"uuid";
     
     if (ix == 0) {
         // shape group
-        //return [generator properties];
-        return @[];
+        return [generator properties];
+//        return @[];
     } else if (ix == 1) {
         // spacing group
         // return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
         return @[spacing, size];
     } else if (ix == 2) {
         // dynamic group
-        //return @[angleDynamics, weightDynamics, intensityDynamics];
-        return @[];
+//        return @[angleDynamics, weightDynamics, intensityDynamics];
+        return @[weightDynamics, intensityDynamics];
     }
     
     return nil;
