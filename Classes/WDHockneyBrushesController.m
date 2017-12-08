@@ -378,7 +378,7 @@
 
     self.navigationItem.leftBarButtonItem.enabled = [[WDActiveState sharedInstance] canDeleteBrush];
     
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+//    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         [self.topBar addEdge];
         self.topBar.ignoreTouches = NO;
         self.topBar.items = [self barItems];
@@ -387,7 +387,7 @@
         [self.bottomBar addEdge];
         self.bottomBar.ignoreTouches = NO;
         self.bottomBar.items = [self bottomBarItems];
-    }
+//    }
     
     [self brushChanged:nil];
 }

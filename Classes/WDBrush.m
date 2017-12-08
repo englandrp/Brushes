@@ -292,16 +292,16 @@ static NSString *WDUUIDKey = @"uuid";
     
     if (ix == 0) {
         // shape group
-        return [generator properties];
-//        return @[];
+//        return [generator properties];
+        return @[];
     } else if (ix == 1) {
         // spacing group
-        // return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
-        return @[spacing, size];
+         return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
+//        return @[spacing, size];
     } else if (ix == 2) {
         // dynamic group
-//        return @[angleDynamics, weightDynamics, intensityDynamics];
-        return @[weightDynamics, intensityDynamics];
+        return @[angleDynamics, weightDynamics, intensityDynamics];
+        return @[];
     }
     
     return nil;
@@ -373,12 +373,12 @@ static NSString *WDUUIDKey = @"uuid";
         self.generator.delegate = self;
         [self buildProperties];
     }
-    self.weight.value = [self decodeValue:WDWeightKey fromDecoder:decoder defaultTo:self.weight.value];
-    self.intensity.value = [self decodeValue:WDIntensityKey fromDecoder:decoder defaultTo:self.intensity.value];
-    self.angle.value = [self decodeValue:WDAngleKey fromDecoder:decoder defaultTo:self.angle.value];
+    self.weight.value = 512; //[self decodeValue:WDWeightKey fromDecoder:decoder defaultTo:self.weight.value];
+    self.intensity.value = 1.0; //[self decodeValue:WDIntensityKey fromDecoder:decoder defaultTo:self.intensity.value];
+    self.angle.value = 0; //[self decodeValue:WDAngleKey fromDecoder:decoder defaultTo:self.angle.value];
     self.spacing.value = [self decodeValue:WDSpacingKey fromDecoder:decoder defaultTo:self.spacing.value];
-    self.rotationalScatter.value = [self decodeValue:WDRotationalScatterKey fromDecoder:decoder defaultTo:self.rotationalScatter.value];
-    self.positionalScatter.value = [self decodeValue:WDPositionalScatterKey fromDecoder:decoder defaultTo:self.positionalScatter.value];
+    self.rotationalScatter.value = 0; //[self decodeValue:WDRotationalScatterKey fromDecoder:decoder defaultTo:self.rotationalScatter.value];
+    self.positionalScatter.value = 0; //[self decodeValue:WDPositionalScatterKey fromDecoder:decoder defaultTo:self.positionalScatter.value];
     self.angleDynamics.value = 0; //[self decodeValue:WDAngleDynamicsKey fromDecoder:decoder defaultTo:self.angleDynamics.value];
     self.weightDynamics.value = 0; //[self decodeValue:WDWeightDynamicsKey fromDecoder:decoder defaultTo:self.weightDynamics.value];
     self.intensityDynamics.value = 0; // [self decodeValue:WDIntensityDynamicsKey fromDecoder:decoder defaultTo:self.intensityDynamics.value];
