@@ -74,6 +74,7 @@ typedef enum {
 @property (nonatomic, readonly) WDCanvas *canvas;
 
 @property (nonatomic) UINavigationController *brushController;
+//@property (nonatomic) WDHockneyBrushController *brushControllerHockney;
 @property (nonatomic) UINavigationController *hockneyBrushController;
 @property (nonatomic, strong) WDColorPickerController *colorPickerController;
 

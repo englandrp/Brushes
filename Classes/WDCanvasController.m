@@ -625,14 +625,19 @@
         return;
     }
     WDHockneyBrushesController *brushController;
+    
 //    if (!self.brushController) {
         brushController = [[WDHockneyBrushesController alloc] initWithNibName:@"HockneyBrushes" bundle:nil];
         brushController.delegate = self;
+        
+//        self.brushControllerHockney = brushController;
         
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:brushController];
         self.brushController = navController;
         
 //    }
+    
+    [brushController setInitialColor:[WDActiveState sharedInstance].paintColor];
     
     [self showController:self.brushController fromBarButtonItem:sender animated:YES];
 //    WDHockneyBrushesController brushController = self.brushController;
