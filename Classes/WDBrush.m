@@ -46,7 +46,6 @@ static NSString *WDUUIDKey = @"uuid";
 @synthesize noise;
 
 @synthesize weight;
-@synthesize size;
 @synthesize intensity;
 
 @synthesize angle;
@@ -93,7 +92,6 @@ static NSString *WDUUIDKey = @"uuid";
     
     copy.angle.value = angle.value;
     copy.weight.value = weight.value;
-    copy.size.value = size.value;
     copy.intensity.value = intensity.value;
     copy.spacing.value = spacing.value;
     copy.rotationalScatter.value = rotationalScatter.value;
@@ -157,15 +155,11 @@ static NSString *WDUUIDKey = @"uuid";
 - (void) buildProperties
 {
     self.weight = [WDProperty property];
-    weight.title = NSLocalizedString(@"Weight", @"Weight");
+    weight.title = NSLocalizedString(@"Size", @"Size");
     weight.conversionFactor = 1;
     weight.minimumValue = 1;
-    weight.maximumValue = 512;
+    weight.maximumValue = 100; //512 in Brushes Redux
     weight.delegate = self;
-    
-    self.size = [WDProperty property];
-    size.title = NSLocalizedString(@"Size", @"Size");
-    size.delegate = self;
     
     self.intensity = [WDProperty property];
     intensity.title = NSLocalizedString(@"Intensity", @"Intensity");
@@ -274,7 +268,7 @@ static NSString *WDUUIDKey = @"uuid";
              
 - (NSArray *) allProperties
 {
-    return @[weight, intensity, angle, spacing, size, rotationalScatter, positionalScatter,
+    return @[weight, intensity, angle, spacing, rotationalScatter, positionalScatter,
          angleDynamics, weightDynamics, intensityDynamics];
 }
 
@@ -292,15 +286,24 @@ static NSString *WDUUIDKey = @"uuid";
     
     if (ix == 0) {
         // shape group
-//        return [generator properties];
-        return @[];
+        if(generator.showProperties) {
+           return [generator properties];
+        } else {
+          return @[];
+        }
+        
     } else if (ix == 1) {
         // spacing group
-         return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
+        if(generator.showProperties) {
+            return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
+        } else {
+            return @[spacing, weight]; // weight is size
+        }
+//         return @[intensity, angle, spacing, rotationalScatter, positionalScatter];
 //        return @[spacing, size];
     } else if (ix == 2) {
         // dynamic group
-        return @[angleDynamics, weightDynamics, intensityDynamics];
+//        return @[angleDynamics, weightDynamics, intensityDynamics];
         return @[];
     }
     
@@ -314,9 +317,9 @@ static NSString *WDUUIDKey = @"uuid";
 
 - (UIImage *) previewImageWithSize:(CGSize)size
 {
-    if (strokePreview && CGSizeEqualToSize(size, strokePreview.size)) {
-        return strokePreview;
-    }
+//    if (strokePreview && CGSizeEqualToSize(size, strokePreview.size)) {
+//        return strokePreview;
+//    }
 
     WDBrushPreview *preview = [WDBrushPreview sharedInstance];
 
@@ -348,6 +351,7 @@ static NSString *WDUUIDKey = @"uuid";
     [coder encodeFloat:self.angle.value forKey:WDAngleKey];
     [coder encodeFloat:self.spacing.value forKey:WDSpacingKey];
     [coder encodeFloat:self.rotationalScatter.value forKey:WDRotationalScatterKey];
+    [coder encodeFloat:self.weight.value forKey:WDWeightKey];
     [coder encodeFloat:self.positionalScatter.value forKey:WDPositionalScatterKey];
     [coder encodeFloat:self.angleDynamics.value forKey:WDAngleDynamicsKey];
     [coder encodeFloat:self.weightDynamics.value forKey:WDWeightDynamicsKey];
@@ -373,15 +377,15 @@ static NSString *WDUUIDKey = @"uuid";
         self.generator.delegate = self;
         [self buildProperties];
     }
-    self.weight.value = 512; //[self decodeValue:WDWeightKey fromDecoder:decoder defaultTo:self.weight.value];
-    self.intensity.value = 1.0; //[self decodeValue:WDIntensityKey fromDecoder:decoder defaultTo:self.intensity.value];
+    self.weight.value = [self decodeValue:WDWeightKey fromDecoder:decoder defaultTo:self.weight.value];
+    self.intensity.value = [self decodeValue:WDIntensityKey fromDecoder:decoder defaultTo:self.intensity.value];
     self.angle.value = 0; //[self decodeValue:WDAngleKey fromDecoder:decoder defaultTo:self.angle.value];
     self.spacing.value = [self decodeValue:WDSpacingKey fromDecoder:decoder defaultTo:self.spacing.value];
     self.rotationalScatter.value = 0; //[self decodeValue:WDRotationalScatterKey fromDecoder:decoder defaultTo:self.rotationalScatter.value];
     self.positionalScatter.value = 0; //[self decodeValue:WDPositionalScatterKey fromDecoder:decoder defaultTo:self.positionalScatter.value];
     self.angleDynamics.value = 0; //[self decodeValue:WDAngleDynamicsKey fromDecoder:decoder defaultTo:self.angleDynamics.value];
-    self.weightDynamics.value = 0; //[self decodeValue:WDWeightDynamicsKey fromDecoder:decoder defaultTo:self.weightDynamics.value];
-    self.intensityDynamics.value = 0; // [self decodeValue:WDIntensityDynamicsKey fromDecoder:decoder defaultTo:self.intensityDynamics.value];
+    self.weightDynamics.value = [self decodeValue:WDWeightDynamicsKey fromDecoder:decoder defaultTo:self.weightDynamics.value];
+    self.intensityDynamics.value = [self decodeValue:WDIntensityDynamicsKey fromDecoder:decoder defaultTo:self.intensityDynamics.value];
     self.uuid = [decoder decodeStringForKey:WDUUIDKey];
 }
 

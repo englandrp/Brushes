@@ -21,6 +21,7 @@
 #import "WDUtilities.h"
 
 #import "WDOldBrushGenerator.h"
+#import "WDRoundGeneratorHard.h"
 #import "WDBristleGenerator.h"
 #import "WDCirclesGenerator.h"
 #import "WDCrossHatchGenerator.h"
@@ -440,7 +441,7 @@ static NSString *WDSwatchKey = @"WDSwatchKey";
     static NSArray *classes_ = nil;
     
     if (!classes_) {
-        classes_ = @[[WDRoundGenerator class],
+        classes_ = @[[WDRoundGeneratorHard class],
                      [WDRoundGenerator class],
                      [WDOldBrushGenerator class],
                      [WDOldBrushGenerator class],
