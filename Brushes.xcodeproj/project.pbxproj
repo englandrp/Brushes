@@ -46,6 +46,23 @@
 		650EE3981FD5F6380093AC82 /* HockneyBrush.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650EE3971FD5F6370093AC82 /* HockneyBrush.xib */; };
 		650EE39B1FD5F6B10093AC82 /* WDHockneyBrushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650EE3991FD5F6AF0093AC82 /* WDHockneyBrushController.m */; };
 		6546BE961FDAA8B9007F7202 /* WDOldBrushGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6546BE941FDAA8B8007F7202 /* WDOldBrushGenerator.m */; };
+		6546BEA81FDAB3FA007F7202 /* bristly2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE981FDAB3F9007F7202 /* bristly2.png */; };
+		6546BEA91FDAB3FA007F7202 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE991FDAB3F9007F7202 /* dots.png */; };
+		6546BEAA1FDAB3FA007F7202 /* coral.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9A1FDAB3F9007F7202 /* coral.png */; };
+		6546BEAB1FDAB3FA007F7202 /* smooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9B1FDAB3F9007F7202 /* smooth.png */; };
+		6546BEAC1FDAB3FA007F7202 /* lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9C1FDAB3F9007F7202 /* lines.png */; };
+		6546BEAD1FDAB3FA007F7202 /* cow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9D1FDAB3F9007F7202 /* cow.png */; };
+		6546BEAE1FDAB3FA007F7202 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9E1FDAB3F9007F7202 /* square.png */; };
+		6546BEAF1FDAB3FA007F7202 /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BE9F1FDAB3F9007F7202 /* round.png */; };
+		6546BEB01FDAB3FA007F7202 /* leaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA01FDAB3F9007F7202 /* leaves.png */; };
+		6546BEB11FDAB3FA007F7202 /* bristly.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA11FDAB3F9007F7202 /* bristly.png */; };
+		6546BEB21FDAB3FA007F7202 /* dots2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA21FDAB3F9007F7202 /* dots2.png */; };
+		6546BEB31FDAB3FA007F7202 /* watercolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA31FDAB3FA007F7202 /* watercolor.png */; };
+		6546BEB41FDAB3FA007F7202 /* bristles.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA41FDAB3FA007F7202 /* bristles.png */; };
+		6546BEB51FDAB3FA007F7202 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA51FDAB3FA007F7202 /* grass.png */; };
+		6546BEB61FDAB3FA007F7202 /* speckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA61FDAB3FA007F7202 /* speckles.png */; };
+		6546BEB71FDAB3FA007F7202 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA71FDAB3FA007F7202 /* wood.png */; };
+		6546BEBA1FDAB706007F7202 /* WDRoundGeneratorHard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6546BEB81FDAB706007F7202 /* WDRoundGeneratorHard.m */; };
 		6B00DA531405F65F00E45409 /* WDActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA521405F65E00E45409 /* WDActivity.m */; };
 		6B00DA5A1406022B00E45409 /* WDActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA591406022B00E45409 /* WDActivityManager.m */; };
 		6B00DA5D140604CE00E45409 /* WDActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA5C140604CE00E45409 /* WDActivityController.m */; };
@@ -493,6 +510,24 @@
 		650EE39A1FD5F6B00093AC82 /* WDHockneyBrushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHockneyBrushController.h; sourceTree = "<group>"; };
 		6546BE941FDAA8B8007F7202 /* WDOldBrushGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDOldBrushGenerator.m; sourceTree = "<group>"; };
 		6546BE951FDAA8B9007F7202 /* WDOldBrushGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDOldBrushGenerator.h; sourceTree = "<group>"; };
+		6546BE981FDAB3F9007F7202 /* bristly2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bristly2.png; path = Images/brushes/bristly2.png; sourceTree = "<group>"; };
+		6546BE991FDAB3F9007F7202 /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dots.png; path = Images/brushes/dots.png; sourceTree = "<group>"; };
+		6546BE9A1FDAB3F9007F7202 /* coral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coral.png; path = Images/brushes/coral.png; sourceTree = "<group>"; };
+		6546BE9B1FDAB3F9007F7202 /* smooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smooth.png; path = Images/brushes/smooth.png; sourceTree = "<group>"; };
+		6546BE9C1FDAB3F9007F7202 /* lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lines.png; path = Images/brushes/lines.png; sourceTree = "<group>"; };
+		6546BE9D1FDAB3F9007F7202 /* cow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cow.png; path = Images/brushes/cow.png; sourceTree = "<group>"; };
+		6546BE9E1FDAB3F9007F7202 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = Images/brushes/square.png; sourceTree = "<group>"; };
+		6546BE9F1FDAB3F9007F7202 /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = round.png; path = Images/brushes/round.png; sourceTree = "<group>"; };
+		6546BEA01FDAB3F9007F7202 /* leaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leaves.png; path = Images/brushes/leaves.png; sourceTree = "<group>"; };
+		6546BEA11FDAB3F9007F7202 /* bristly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bristly.png; path = Images/brushes/bristly.png; sourceTree = "<group>"; };
+		6546BEA21FDAB3F9007F7202 /* dots2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dots2.png; path = Images/brushes/dots2.png; sourceTree = "<group>"; };
+		6546BEA31FDAB3FA007F7202 /* watercolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = watercolor.png; path = Images/brushes/watercolor.png; sourceTree = "<group>"; };
+		6546BEA41FDAB3FA007F7202 /* bristles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bristles.png; path = Images/brushes/bristles.png; sourceTree = "<group>"; };
+		6546BEA51FDAB3FA007F7202 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grass.png; path = Images/brushes/grass.png; sourceTree = "<group>"; };
+		6546BEA61FDAB3FA007F7202 /* speckles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speckles.png; path = Images/brushes/speckles.png; sourceTree = "<group>"; };
+		6546BEA71FDAB3FA007F7202 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wood.png; path = Images/brushes/wood.png; sourceTree = "<group>"; };
+		6546BEB81FDAB706007F7202 /* WDRoundGeneratorHard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRoundGeneratorHard.m; sourceTree = "<group>"; };
+		6546BEB91FDAB706007F7202 /* WDRoundGeneratorHard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRoundGeneratorHard.h; sourceTree = "<group>"; };
 		6B00DA511405F65E00E45409 /* WDActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivity.h; sourceTree = "<group>"; };
 		6B00DA521405F65E00E45409 /* WDActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDActivity.m; sourceTree = "<group>"; };
 		6B00DA581406022B00E45409 /* WDActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivityManager.h; sourceTree = "<group>"; };
@@ -1140,6 +1175,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6546BE971FDAB3DA007F7202 /* BrushImages */ = {
+			isa = PBXGroup;
+			children = (
+				6546BEA41FDAB3FA007F7202 /* bristles.png */,
+				6546BEA11FDAB3F9007F7202 /* bristly.png */,
+				6546BE981FDAB3F9007F7202 /* bristly2.png */,
+				6546BE9A1FDAB3F9007F7202 /* coral.png */,
+				6546BE9D1FDAB3F9007F7202 /* cow.png */,
+				6546BE991FDAB3F9007F7202 /* dots.png */,
+				6546BEA21FDAB3F9007F7202 /* dots2.png */,
+				6546BEA51FDAB3FA007F7202 /* grass.png */,
+				6546BEA01FDAB3F9007F7202 /* leaves.png */,
+				6546BE9C1FDAB3F9007F7202 /* lines.png */,
+				6546BE9F1FDAB3F9007F7202 /* round.png */,
+				6546BE9B1FDAB3F9007F7202 /* smooth.png */,
+				6546BEA61FDAB3FA007F7202 /* speckles.png */,
+				6546BE9E1FDAB3F9007F7202 /* square.png */,
+				6546BEA31FDAB3FA007F7202 /* watercolor.png */,
+				6546BEA71FDAB3FA007F7202 /* wood.png */,
+			);
+			name = BrushImages;
+			sourceTree = "<group>";
+		};
 		6B08CE2D1821B2F4001AFC3C /* Export */ = {
 			isa = PBXGroup;
 			children = (
@@ -1248,6 +1306,8 @@
 				6B40CE03181FD10E00004FB2 /* WDRectGenerator.m */,
 				6B40CE04181FD10E00004FB2 /* WDRoundGenerator.h */,
 				6B40CE05181FD10E00004FB2 /* WDRoundGenerator.m */,
+				6546BEB91FDAB706007F7202 /* WDRoundGeneratorHard.h */,
+				6546BEB81FDAB706007F7202 /* WDRoundGeneratorHard.m */,
 				6B40CE06181FD10E00004FB2 /* WDShader.h */,
 				6B40CE07181FD10E00004FB2 /* WDShader.m */,
 				6B40CE08181FD10E00004FB2 /* WDSpiralGenerator.h */,
@@ -1618,6 +1678,7 @@
 		6BCD52C0123FFFF3002FCB27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6546BE971FDAB3DA007F7202 /* BrushImages */,
 				6BDBC636130E1FD000BC3BCA /* App */,
 				6B7DF84C1594EEC70053AE9B /* Canvas Shadow */,
 				6B08CE2E1821CB95001AFC3C /* Dropbox */,
@@ -1983,6 +2044,7 @@
 				6BA75590161654F700BABEBF /* Default-568h@2x.png in Resources */,
 				650EE3811FCDC7140093AC82 /* AppIcon167x167@2x.png in Resources */,
 				6B11BEFF14FA9F7E00195D57 /* colorPicker.fsh in Resources */,
+				6546BEAB1FDAB3FA007F7202 /* smooth.png in Resources */,
 				6B82B93914EB31F3002442CE /* merge.fsh in Resources */,
 				6B944B3614D0C0A000E20F7C /* invert.fsh in Resources */,
 				6B944B3314D0BED900E20F7C /* desaturate.fsh in Resources */,
@@ -2010,9 +2072,11 @@
 				6BF1B94F1461D66C009C4710 /* brush.vsh in Resources */,
 				6BD595C1152D26060014A798 /* blitWithEraseMask.fsh in Resources */,
 				6B08CDFE182188C3001AFC3C /* stylus_selected@2x.png in Resources */,
+				6546BEB01FDAB3FA007F7202 /* leaves.png in Resources */,
 				6B40CDC6181FD0BA00004FB2 /* eraser_landscape@2x.png in Resources */,
 				6B40CE90181FD36600004FB2 /* SizeChooser.xib in Resources */,
 				6BF1B9501461D66C009C4710 /* brush.fsh in Resources */,
+				6546BEAE1FDAB3FA007F7202 /* square.png in Resources */,
 				6B8E557A181F20400022F573 /* duplicate-modern.png in Resources */,
 				6BD5959C1524C2A70014A798 /* blitFromHueChromaLuma.fsh in Resources */,
 				6BD5959D1524C2A70014A798 /* toHueChromaLuma.fsh in Resources */,
@@ -2029,6 +2093,7 @@
 				6BCD52BD123FFFED002FCB27 /* undo.png in Resources */,
 				6BC062AE124F719000451362 /* checkmark.png in Resources */,
 				6B3A2A571256E2CE00574B41 /* hidden.png in Resources */,
+				6546BEB71FDAB3FA007F7202 /* wood.png in Resources */,
 				6B3A2A581256E2CE00574B41 /* visible.png in Resources */,
 				6B3A2AEB1256F35300574B41 /* lock.png in Resources */,
 				6B40CE87181FD36600004FB2 /* Import.xib in Resources */,
@@ -2045,6 +2110,7 @@
 				6B40CE84181FD36600004FB2 /* ColorPicker~iphone5.xib in Resources */,
 				6B8E559F181F2B720022F573 /* AppIcon50x50@2x.png in Resources */,
 				6B616774137B429200BEC0BA /* Samples in Resources */,
+				6546BEB21FDAB3FA007F7202 /* dots2.png in Resources */,
 				6B40CDC4181FD0BA00004FB2 /* eraser@2x.png in Resources */,
 				6B08CE00182188C3001AFC3C /* stylus_unselected@2x.png in Resources */,
 				6B8E557B181F20400022F573 /* duplicate-modern@2x.png in Resources */,
@@ -2068,6 +2134,7 @@
 				6B82B96014F564D3002442CE /* decrement.png in Resources */,
 				6B82B96114F564D3002442CE /* increment.png in Resources */,
 				6BC6265C15015DD100BBABF2 /* unlock_thumb@2x.png in Resources */,
+				6546BEA81FDAB3FA007F7202 /* bristly2.png in Resources */,
 				6BC6265F15018C8D00BBABF2 /* decrement@2x.png in Resources */,
 				6BC6266015018C8D00BBABF2 /* increment@2x.png in Resources */,
 				6BC62662150194DA00BBABF2 /* slider_border@2x.png in Resources */,
@@ -2090,9 +2157,11 @@
 				6BD595A915252B280014A798 /* dropbox_icon_directory@2x.png in Resources */,
 				6BE58FD0181F33720002AE0E /* AppIcon29x29-Classic@2x.png in Resources */,
 				6BD595AB15252B280014A798 /* dropbox_icon_generic@2x.png in Resources */,
+				6546BEAC1FDAB3FA007F7202 /* lines.png in Resources */,
 				6BE58FCF181F33720002AE0E /* AppIcon29x29-Classic.png in Resources */,
 				6BD595AE15252B280014A798 /* dropbox_icon_unsupported@2x.png in Resources */,
 				6B08CE10182192E0001AFC3C /* action-modern@2x.png in Resources */,
+				6546BEB31FDAB3FA007F7202 /* watercolor.png in Resources */,
 				6B08CE171821A69F001AFC3C /* actionLandscape-modern.png in Resources */,
 				6B40CDC2181FD0BA00004FB2 /* brush_landscape@2x.png in Resources */,
 				6B40CE8C181FD36600004FB2 /* MainWindow.xib in Resources */,
@@ -2107,6 +2176,7 @@
 				6B40CE7F181FD36600004FB2 /* BrushCell.xib in Resources */,
 				6B1BE6A41548B59500D483EF /* hiddenMessage.png in Resources */,
 				6B1BE6A51548B59500D483EF /* lockMessage.png in Resources */,
+				6546BEB61FDAB3FA007F7202 /* speckles.png in Resources */,
 				6B1BE6A91548B69500D483EF /* hiddenMessage@2x.png in Resources */,
 				6B1BE6AA1548B69500D483EF /* lockMessage@2x.png in Resources */,
 				6B648826154B4EBD0066C950 /* play.png in Resources */,
@@ -2121,6 +2191,7 @@
 				6B17A9FB155B361C006E72FD /* export_jpeg_icon.png in Resources */,
 				6B17A9FC155B361C006E72FD /* export_photoshop_icon.png in Resources */,
 				6B17A9FD155B361C006E72FD /* export_png_icon.png in Resources */,
+				6546BEB41FDAB3FA007F7202 /* bristles.png in Resources */,
 				6B40CE7E181FD36600004FB2 /* Brush.xib in Resources */,
 				6B4D71D115645CCE00996FDD /* rotate@2x.png in Resources */,
 				6B4D71D315645DEF00996FDD /* rotate.png in Resources */,
@@ -2141,6 +2212,7 @@
 				6B08CE0F182192E0001AFC3C /* action-modern.png in Resources */,
 				6BADBB9D157489F4005731E9 /* export_png_icon@2x.png in Resources */,
 				6BADBB9F15748B65005731E9 /* style@2x.png in Resources */,
+				6546BEAA1FDAB3FA007F7202 /* coral.png in Resources */,
 				6B5F0B4D1578174000A195F9 /* add.png in Resources */,
 				6B5F0B5015781BB800A195F9 /* trash.png in Resources */,
 				6B8E558F181F2A0F0022F573 /* AppIcon40x40@2x.png in Resources */,
@@ -2155,10 +2227,12 @@
 				6B8E5592181F2A0F0022F573 /* AppIcon76x76.png in Resources */,
 				6B08CE2C1821B1A5001AFC3C /* export_png_icon-modern@2x.png in Resources */,
 				6B1DDBE11582C890008B29A9 /* shadow_left.png in Resources */,
+				6546BEB51FDAB3FA007F7202 /* grass.png in Resources */,
 				6B1DDBE21582C890008B29A9 /* shadow_right.png in Resources */,
 				6B1DDBE31582C890008B29A9 /* shadow_top.png in Resources */,
 				6B1DDBE41582C890008B29A9 /* shadow_topleft.png in Resources */,
 				6B1DDBE51582C890008B29A9 /* shadow_topright.png in Resources */,
+				6546BEAD1FDAB3FA007F7202 /* cow.png in Resources */,
 				6B40CE98181FD3B200004FB2 /* Defaults.plist in Resources */,
 				6B8E55A3181F2B720022F573 /* AppIcon72x72@2x.png in Resources */,
 				6BDB83CB1593CDC10037E10B /* ping_mono.caf in Resources */,
@@ -2202,6 +2276,7 @@
 				650EE3871FD02AAC0093AC82 /* AppIcon1024x1024.png in Resources */,
 				6B40CE89181FD36600004FB2 /* LayerCell~iphone.xib in Resources */,
 				6B215C3E15DA050E0078DD7F /* dropbox_icon_brushes.png in Resources */,
+				6546BEB11FDAB3FA007F7202 /* bristly.png in Resources */,
 				6B40CE9A181FD3B200004FB2 /* DocSizes.plist in Resources */,
 				6B215C3F15DA050E0078DD7F /* dropbox_icon_brushes@2x.png in Resources */,
 				6B40CE82181FD36600004FB2 /* ColorPicker.xib in Resources */,
@@ -2210,6 +2285,7 @@
 				6B08CE07182189A0001AFC3C /* stylus_unselected-modern@2x.png in Resources */,
 				6B1E107415ED6D41006128D8 /* Samples HD in Resources */,
 				6B1E108915EFEB57006128D8 /* Settings.bundle in Resources */,
+				6546BEA91FDAB3FA007F7202 /* dots.png in Resources */,
 				6B40CE8A181FD36600004FB2 /* Layers.xib in Resources */,
 				6BF194E21607C97500D36BC7 /* unlockFade.png in Resources */,
 				6BF194E41607D15F00D36BC7 /* unlockFade@2x.png in Resources */,
@@ -2217,6 +2293,7 @@
 				6B5F0F6516005A3C00E44FB8 /* BlueTooth@2x.png in Resources */,
 				6B5F0F6716005FA700E44FB8 /* BlueToothLandscape.png in Resources */,
 				6B5F0F6916005FBF00E44FB8 /* BlueToothLandscape@2x.png in Resources */,
+				6546BEAF1FDAB3FA007F7202 /* round.png in Resources */,
 				6B99F6DA1614FCCB00FD5B4B /* bar_minus.png in Resources */,
 				6B99F6DB1614FCCB00FD5B4B /* bar_plus.png in Resources */,
 				6B8E5593181F2A0F0022F573 /* AppIcon76x76@2x.png in Resources */,
@@ -2335,6 +2412,7 @@
 				6B944B4A14DB43E000E20F7C /* WDTransformOverlay.m in Sources */,
 				6B40CDB3181FD07500004FB2 /* UIDeviceHardware.m in Sources */,
 				6B40CDA1181FCFFE00004FB2 /* UIColor+Additions.m in Sources */,
+				6546BEBA1FDAB706007F7202 /* WDRoundGeneratorHard.m in Sources */,
 				6B82B92814E489BD002442CE /* WDUnlockSlider.m in Sources */,
 				6B82B94614EF52BC002442CE /* WDLayerController.m in Sources */,
 				6B82B94914EF538A002442CE /* WDBrushesController.m in Sources */,
