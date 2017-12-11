@@ -33,6 +33,7 @@
 @synthesize topBar;
 @synthesize bottomBar;
 @synthesize brushSlider;
+@synthesize color = color_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -202,6 +203,8 @@
     WDHockneyBrushController *brushController = [[WDHockneyBrushController alloc] initWithNibName:@"HockneyBrush" bundle:nil];
     brushController.brush = [[WDActiveState sharedInstance] brushAtIndex:0];
     
+    [brushController setInitialColor:[WDActiveState sharedInstance].paintColor];
+    
     [self.navigationController pushViewController:brushController animated:YES];
 }
 
@@ -327,6 +330,22 @@
 - (void) takeBrushSizeFrom:(WDBarSlider *)sender
 {
     [WDActiveState sharedInstance].brush.weight.value = sender.value;
+}
+
+- (void) setColor_:(WDColor *)color
+{
+    color_ = color;
+}
+
+- (void) setInitialColor:(WDColor *)color
+{
+    [self setColor_:color];
+}
+
+- (void) setColor:(WDColor *)color
+{
+    [self setColor_:color];
+    [WDActiveState sharedInstance].paintColor = color;
 }
 
 - (NSArray *) bottomBarItems

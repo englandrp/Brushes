@@ -15,7 +15,7 @@
 @class WDBrushCell;
 @class WDColorSlider;
 
-@interface WDHockneyBrushesController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface WDHockneyBrushesController : UIViewController <WDSwatchesDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *toolbarItems_;
 }
 
@@ -25,6 +25,11 @@
 @property (nonatomic, weak) WDBar *topBar;
 @property (nonatomic, weak) WDBar *bottomBar;
 @property (nonatomic) WDBarSlider *brushSlider;
--(void) showFirstBrush;
+@property (nonatomic) WDColor *color;
+
+- (void) showFirstBrush;
+- (void) setInitialColor:(WDColor *)color;
+
+
 
 @end
