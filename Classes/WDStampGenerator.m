@@ -178,7 +178,6 @@ static NSString *WDUUIDKey = @"uuid";
     if (!stamp) {
         stamp = [self generateStamp];
     }
-    
     return stamp;
 }
 

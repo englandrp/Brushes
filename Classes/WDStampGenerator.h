@@ -35,6 +35,7 @@
 @property (nonatomic, readonly) CGRect bounds;
 @property (nonatomic) UInt8 blurRadius;
 @property (nonatomic, readonly) BOOL canRandomize;
+@property (nonatomic, readonly) BOOL showProperties;
 
 @property (nonatomic, weak) id<WDGeneratorDelegate> delegate;
 
