@@ -17,6 +17,13 @@
 #import "WDPropertyCell.h"
 #import "WDStampPicker.h"
 #import "WDUtilities.h"
+#import "WDColor.h"
+#import "WDColorComparator.h"
+#import "WDColorPickerController.h"
+#import "WDColorSlider.h"
+#import "WDColorSquare.h"
+#import "WDColorWheel.h"
+#import "WDMatrix.h"
 
 @implementation WDHockneyBrushController
 
@@ -27,6 +34,16 @@
 @synthesize picker;
 @synthesize topBar;
 @synthesize bottomBar;
+
+
+//alpha slider
+@synthesize color = color_;
+@synthesize colorComparator = colorComparator_;
+@synthesize alphaSlider = alphaSlider_;
+@synthesize opacitySwitch = opacitySwitch_;
+@synthesize sizeSpeedSwitch = sizeSpeedSwitch_;
+
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -108,6 +125,30 @@
     [picker chooseItemAtIndex:[[WDActiveState sharedInstance] indexForGeneratorClass:[brush.generator class]]];
     
     [self enableRandomizeButton];
+}
+
+//alpha slider
+
+- (void) setColor_:(WDColor *)color
+{
+    color_ = color;
+    
+    [self.alphaSlider setColor:color_];
+    
+    [WDActiveState sharedInstance].paintColor = color;
+}
+
+- (void) setInitialColor:(WDColor *)color
+{
+    [self.colorComparator setInitialColor:color];
+    [self setColor_:color];
+}
+
+- (void) setColor:(WDColor *)color
+{
+    [self setColor_:color];
+    [WDActiveState sharedInstance].paintColor = color;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -207,6 +248,7 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
+        aBar.tightHitTest = YES;
         
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
@@ -233,11 +275,24 @@
 - (NSArray *) bottomBarItems
 {
     WDBarItem *dismiss = [WDBarItem barItemWithImage:[UIImage imageNamed:@"dismiss.png"]
-                                      landscapeImage:[UIImage imageNamed:@"dismissLandscape.png"]
-                                              target:self
-                                              action:@selector(done:)];
+                                          landscapeImage:[UIImage imageNamed:@"dismissLandscape.png"]
+                                                  target:self
+                                                  action:@selector(done:)];
+    
+    NSMutableArray *items = [NSMutableArray arrayWithObjects:[WDBarItem flexibleItem], dismiss, nil];
+    
+    return items;
+}
 
-    return @[[WDBarItem flexibleItem], dismiss];
+- (void) takeAlphaFrom:(WDColorSlider *)slider
+{
+    float alpha = slider.floatValue;
+    
+    WDColor *newColor = [WDColor colorWithHue:[color_ hue]
+                                   saturation:[color_ saturation]
+                                   brightness:[color_ brightness]
+                                        alpha:alpha];
+    [self setColor:newColor];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -284,7 +339,45 @@
         self.bottomBar.items = [self bottomBarItems];
     }
     
+    UIControlEvents dragEvents = (UIControlEventTouchDown | UIControlEventTouchDragInside | UIControlEventTouchDragOutside);
+    
+    self.alphaSlider.mode = WDColorSliderModeAlpha;
+    [alphaSlider_ addTarget:self action:@selector(takeAlphaFrom:) forControlEvents:dragEvents];
+    self.initialColor = [WDActiveState sharedInstance].paintColor;
+    
+    self.opacitySwitch.on = self.brush.intensityDynamics > 0;
+    self.sizeSpeedSwitch.on = !(self.brush.weightDynamics == 0);
+    
+    [self.opacitySwitch addTarget: self action: @selector(toggleOpacity:) forControlEvents: UIControlEventValueChanged];
+    [self.sizeSpeedSwitch addTarget: self action: @selector(toggleSizeSpeed:) forControlEvents: UIControlEventValueChanged];
+
+    
     [self enableRandomizeButton];
+}
+
+
+- (IBAction)toggleOpacity:(id)sender{
+    
+    if([sender isOn]){
+        self.brush.intensityDynamics.value = 1.0f;
+        NSLog(@"Switch is ON");
+    } else{
+        NSLog(@"Switch is OFF");
+        self.brush.intensityDynamics.value = 0;
+    }
+    
+}
+
+- (IBAction)toggleSizeSpeed:(id)sender{
+    
+    if([sender isOn]){
+        self.brush.weightDynamics.value = -1.0f;
+        NSLog(@"Switch is ON");
+    } else{
+        NSLog(@"Switch is OFF");
+        self.brush.weightDynamics.value = 0;
+    }
+    
 }
 
 - (void) done:(id)sender

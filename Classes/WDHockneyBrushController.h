@@ -10,14 +10,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDSwatches.h"
 
 @class WDBar;
 @class WDBarItem;
 @class WDBrush;
 @class WDPropertyCell;
 @class WDStampPicker;
+@class WDBar;
+@class WDColor;
+@class WDColorComparator;
+@class WDColorSquare;
+@class WDColorWheel;
+@class WDColorSlider;
+@class WDMatrix;
 
-@interface WDHockneyBrushController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WDHockneyBrushController : UIViewController <WDSwatchesDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray      *toolbarItems_;
     WDBarItem           *randomize_;
@@ -30,5 +38,18 @@
 @property (nonatomic, weak) WDBar *topBar;
 @property (nonatomic, weak) WDBar *bottomBar;
 @property (nonatomic, weak) WDBrush *brush;
+
+@property (nonatomic) WDColor *color;
+
+@property (nonatomic) IBOutlet WDColorComparator *colorComparator;
+@property (nonatomic) IBOutlet WDColorSlider *alphaSlider;
+@property (nonatomic) IBOutlet UISwitch *opacitySwitch;
+@property (nonatomic) IBOutlet UISwitch *sizeSpeedSwitch;
+
+@property (nonatomic, weak) id delegate;
+
+- (void) setInitialColor:(WDColor *)color;
+
+
 
 @end

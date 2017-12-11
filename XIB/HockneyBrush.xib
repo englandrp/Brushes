@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WDBrushController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WDHockneyBrushController">
             <connections>
+                <outlet property="alphaSlider" destination="DuU-nA-OHp" id="b3D-VI-yox"/>
+                <outlet property="opacitySwitch" destination="dQR-JB-iTa" id="iSI-70-eZ5"/>
                 <outlet property="picker" destination="22" id="25"/>
                 <outlet property="preview" destination="23" id="24"/>
                 <outlet property="propertyTable" destination="15" id="16"/>
-                <outlet property="view" destination="1" id="8"/>
+                <outlet property="sizeSpeedSwitch" destination="0uK-n8-RtG" id="5Ur-JZ-3iY"/>
+                <outlet property="view" destination="1" id="MHF-B1-D9K"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" misplaced="YES" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="878"/>
+            <rect key="frame" x="0.0" y="0.0" width="470" height="878"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="15">
-                    <rect key="frame" x="0.0" y="308" width="320" height="424"/>
+                    <rect key="frame" x="0.0" y="308" width="470" height="424"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="separatorColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,22 +35,49 @@
                         <outlet property="delegate" destination="-1" id="18"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" misplaced="YES" id="DuU-nA-OHp" customClass="WDColorSlider">
+                    <rect key="frame" x="18" y="731" width="434" height="16"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0uK-n8-RtG">
+                    <rect key="frame" x="18" y="793" width="49" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="VARY OPACITY WITH SPEED" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FU3-af-q2j">
+                    <rect key="frame" x="231" y="764" width="221" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="dQR-JB-iTa">
+                    <rect key="frame" x="403" y="793" width="49" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                </switch>
                 <view contentMode="scaleToFill" misplaced="YES" id="22" customClass="WDStampPicker">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="300"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="23">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="197"/>
+                            <rect key="frame" x="75" y="0.0" width="320" height="197"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="VARY SIZE WITH SPEED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bzL-TJ-aG6">
+                    <rect key="frame" x="20" y="763" width="186" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="34" y="144"/>
+            <point key="canvasLocation" x="109" y="144"/>
         </view>
     </objects>
 </document>
