@@ -317,9 +317,9 @@ static NSString *WDUUIDKey = @"uuid";
 
 - (UIImage *) previewImageWithSize:(CGSize)size
 {
-//    if (strokePreview && CGSizeEqualToSize(size, strokePreview.size)) {
-//        return strokePreview;
-//    }
+    if (strokePreview && CGSizeEqualToSize(size, strokePreview.size)) {
+        return strokePreview;
+    }
 
     WDBrushPreview *preview = [WDBrushPreview sharedInstance];
 

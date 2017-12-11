@@ -73,7 +73,7 @@
     }
     
     self.path = [[WDPath alloc] init];
-    self.path.limitBrushSize = YES;
+//    self.path.limitBrushSize = YES;
     self.path.nodes = nodes;
 }
     
