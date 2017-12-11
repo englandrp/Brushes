@@ -25,7 +25,7 @@
 @class WDColorSlider;
 @class WDMatrix;
 
-@interface WDHockneyBrushController : UIViewController <WDSwatchesDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface WDHockneyBrushController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray      *toolbarItems_;
     WDBarItem           *randomize_;

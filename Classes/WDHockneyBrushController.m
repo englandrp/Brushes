@@ -327,10 +327,9 @@
     
     self.preview.contentMode = UIViewContentModeCenter;
     
-    if ([self respondsToSelector:@selector(setPreferredContentSize:)])
-        self.preferredContentSize = self.view.frame.size;
-    else
-        self.contentSizeForViewInPopover = self.view.frame.size;
+
+    self.preferredContentSize = self.view.frame.size;
+   
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         self.topBar.ignoreTouches = YES;
@@ -390,7 +389,7 @@
     [super viewWillAppear:animated];
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-        [self configureForOrientation:self.interfaceOrientation];
+        [self configureForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
     }
 }
 
