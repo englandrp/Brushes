@@ -48,6 +48,8 @@
 #import "WDUtilities.h"
 #import "WDUnlockView.h"
 
+#import <Photos/Photos.h>
+
 #define RESCALE_REPLAY          0
 #define kNavBarFixedWidth       20
 
@@ -73,6 +75,7 @@
 @synthesize actionNameView;
 @synthesize replayScale;
 @synthesize wasPlayingBeforeRotation;
+@synthesize popOver;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -206,12 +209,25 @@
     }
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.delegate = self;
     
-    [self showController:picker fromBarButtonItem:sender animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // iPad requires popover in order to work
+        UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:picker];
+        
+        [popover presentPopoverFromRect:CGRectMake(0, 0, 600, 600) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        self.popOver = popover;
+    } else {
+        // iPhone
+        [self showController:picker fromBarButtonItem:sender animated:YES];
+    }
+
+   
 }
+
+
 
 #pragma mark -
 #pragma mark Image Placement
@@ -245,11 +261,15 @@
     
     image = [image resizedImage:imageSize interpolationQuality:kCGInterpolationHigh];
     [canvas_ beginPhotoPlacement:image];
+    
+    [self.popOver dismissPopoverAnimated:true];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissImagePicker:picker];
+    
+    [self.popOver dismissPopoverAnimated:true];
 }
 
 #pragma mark -
@@ -1292,12 +1312,18 @@
                  layer_,
                  nil];
     } else {
-        items = [NSMutableArray arrayWithObjects:
-                 colorItem, fixed, fixed, eyeDropper, [WDBarItem flexibleItem], nil];
+        
     
+        WDBarItem *fill = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"fill.png"]
+                                       landscapeImage:[UIImage relevantImageNamed:@"fill.png"]
+                                               target:self
+                                               action:@selector(fillLayer:)];
+        
+        items = [NSMutableArray arrayWithObjects:
+                 colorItem, fixed, fixed, eyeDropper, fixed, fill, [WDBarItem flexibleItem], nil];
         
         [items addObjectsFromArray:@[
-                                     [WDBarItem flexibleItem], fixed,
+                                     fixed,
                                      [self addTool0:[WDActiveState sharedInstance].tools], fixed, fixed,
                                      oldStyleBrushItem, fixed, fixed,
                                      [self addTool1:[WDActiveState sharedInstance].tools], fixed,
@@ -1593,6 +1619,23 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        switch (status) {
+            case PHAuthorizationStatusAuthorized:
+                NSLog(@"PHAuthorizationStatusAuthorized");
+                break;
+            case PHAuthorizationStatusDenied:
+                NSLog(@"PHAuthorizationStatusDenied");
+                break;
+            case PHAuthorizationStatusNotDetermined:
+                NSLog(@"PHAuthorizationStatusNotDetermined");
+                break;
+            case PHAuthorizationStatusRestricted:
+                NSLog(@"PHAuthorizationStatusRestricted");
+                break;
+        }
+    }];
     
     if (!self.hasAppearedBefore) {
         // hide the default navbar and toolbar
