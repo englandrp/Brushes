@@ -1075,6 +1075,12 @@
                                          landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
                                                  target:self
                                                  action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
+        
+        WDBarItem *fill = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"fill.png"]
+                                         landscapeImage:[UIImage relevantImageNamed:@"fill.png"]
+                                                 target:self
+                                                 action:@selector(fillLayer:)];
+        
         WDBarItem *bluetooth = [WDBarItem barItemWithImage:[UIImage imageNamed:@"BlueTooth.png"]
                                             landscapeImage:[UIImage imageNamed:@"BlueToothLandscape.png"]
                                                     target:self
@@ -1105,6 +1111,8 @@
             [items addObject:album_];
             [items addObject:fixed];
         }
+        
+        [items addObject:fill];
         
         [items addObject:action];
         

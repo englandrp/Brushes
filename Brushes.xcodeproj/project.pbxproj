@@ -63,6 +63,8 @@
 		6546BEB61FDAB3FA007F7202 /* speckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA61FDAB3FA007F7202 /* speckles.png */; };
 		6546BEB71FDAB3FA007F7202 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 6546BEA71FDAB3FA007F7202 /* wood.png */; };
 		6546BEBA1FDAB706007F7202 /* WDRoundGeneratorHard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6546BEB81FDAB706007F7202 /* WDRoundGeneratorHard.m */; };
+		65B6DAED1FEA8D83003E68A5 /* fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6DAEB1FEA8D82003E68A5 /* fill@2x.png */; };
+		65B6DAEE1FEA8D83003E68A5 /* fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6DAEC1FEA8D82003E68A5 /* fill.png */; };
 		6B00DA531405F65F00E45409 /* WDActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA521405F65E00E45409 /* WDActivity.m */; };
 		6B00DA5A1406022B00E45409 /* WDActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA591406022B00E45409 /* WDActivityManager.m */; };
 		6B00DA5D140604CE00E45409 /* WDActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA5C140604CE00E45409 /* WDActivityController.m */; };
@@ -528,6 +530,8 @@
 		6546BEA71FDAB3FA007F7202 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wood.png; path = Images/brushes/wood.png; sourceTree = "<group>"; };
 		6546BEB81FDAB706007F7202 /* WDRoundGeneratorHard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDRoundGeneratorHard.m; sourceTree = "<group>"; };
 		6546BEB91FDAB706007F7202 /* WDRoundGeneratorHard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRoundGeneratorHard.h; sourceTree = "<group>"; };
+		65B6DAEB1FEA8D82003E68A5 /* fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fill@2x.png"; sourceTree = "<group>"; };
+		65B6DAEC1FEA8D82003E68A5 /* fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fill.png; sourceTree = "<group>"; };
 		6B00DA511405F65E00E45409 /* WDActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivity.h; sourceTree = "<group>"; };
 		6B00DA521405F65E00E45409 /* WDActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDActivity.m; sourceTree = "<group>"; };
 		6B00DA581406022B00E45409 /* WDActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivityManager.h; sourceTree = "<group>"; };
@@ -1358,6 +1362,8 @@
 				6B40CDBC181FD0BA00004FB2 /* eraser@2x.png */,
 				6B40CDBD181FD0BA00004FB2 /* eraser_landscape.png */,
 				6B40CDBE181FD0BA00004FB2 /* eraser_landscape@2x.png */,
+				65B6DAEC1FEA8D82003E68A5 /* fill.png */,
+				65B6DAEB1FEA8D82003E68A5 /* fill@2x.png */,
 			);
 			name = Tools;
 			path = Images/tools;
@@ -2125,6 +2131,7 @@
 				650EE3911FD56FDB0093AC82 /* HockneyBrushes.xib in Resources */,
 				6BA16EE31457A488002A5702 /* style.png in Resources */,
 				6B377A06147B8D830078147A /* brighter_small_checkers.png in Resources */,
+				65B6DAED1FEA8D83003E68A5 /* fill@2x.png in Resources */,
 				6BD3735314A01F3400C4C941 /* blitWithMask.fsh in Resources */,
 				6B82B92A14E49646002442CE /* unlock_thumb.png in Resources */,
 				6B82B93C14EC8701002442CE /* alpha_lock.png in Resources */,
@@ -2294,6 +2301,7 @@
 				6B5F0F6716005FA700E44FB8 /* BlueToothLandscape.png in Resources */,
 				6B5F0F6916005FBF00E44FB8 /* BlueToothLandscape@2x.png in Resources */,
 				6546BEAF1FDAB3FA007F7202 /* round.png in Resources */,
+				65B6DAEE1FEA8D83003E68A5 /* fill.png in Resources */,
 				6B99F6DA1614FCCB00FD5B4B /* bar_minus.png in Resources */,
 				6B99F6DB1614FCCB00FD5B4B /* bar_plus.png in Resources */,
 				6B8E5593181F2A0F0022F573 /* AppIcon76x76@2x.png in Resources */,
