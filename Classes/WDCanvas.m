@@ -379,6 +379,21 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
     }
 }
 
+- (void) displayEyedropper
+{
+    if (eyedropper_) {
+        return;
+    }
+    
+    eyedropper_ = [[WDEyedropper alloc] initWithFrame:CGRectMake(0, 0, kDropperRadius * 2, kDropperRadius * 2)];
+    
+    eyedropper_.sharpCenter = [self convertPoint:[self constrainPointToPainting:CGPointMake(0, 0    )] toView:self];
+    [eyedropper_ setBorderWidth:20];
+    
+    [self.superview addSubview:eyedropper_];
+}
+
+
 - (void) displayEyedropperAtPoint:(CGPoint)pt 
 {
     if (eyedropper_) {

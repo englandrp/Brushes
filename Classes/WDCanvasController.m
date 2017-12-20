@@ -1123,6 +1123,8 @@
                                                  target:self
                                                  action:@selector(fillLayer:)];
         
+    
+        
         WDBarItem *bluetooth = [WDBarItem barItemWithImage:[UIImage imageNamed:@"BlueTooth.png"]
                                             landscapeImage:[UIImage imageNamed:@"BlueToothLandscape.png"]
                                                     target:self
@@ -1274,6 +1276,11 @@
     [brushSlider_ addTarget:self action:@selector(takeBrushSizeFrom:) forControlEvents:UIControlEventValueChanged];
     [brushSlider_ addTarget:self action:@selector(brushSliderBegan:) forControlEvents:UIControlEventTouchDown];
     
+    WDBarItem *eyeDropper = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"eyedropper.png"]
+                                         landscapeImage:[UIImage relevantImageNamed:@"eyedropper.png"]
+                                                 target:self
+                                                 action:@selector(canvasShowEyeDropper:)];
+    
     NSMutableArray *items;
     if (self.runningOnPhone) {
         items = [NSMutableArray arrayWithObjects:
@@ -1286,7 +1293,7 @@
                  nil];
     } else {
         items = [NSMutableArray arrayWithObjects:
-                 colorItem, [WDBarItem flexibleItem], nil];
+                 colorItem, fixed, fixed, eyeDropper, [WDBarItem flexibleItem], nil];
     
         
         [items addObjectsFromArray:@[
@@ -1308,6 +1315,11 @@
 #pragma mark -
 #pragma mark Notifications
  
+- (void) canvasShowEyeDropper:(NSNotification *)aNotification
+{
+//    [canvas_ longPress:longPress];
+}
+                                                                  
 - (void) undoStatusDidChange:(NSNotification *)aNotification
 {
     undo_.enabled = [self.painting.undoManager canUndo];

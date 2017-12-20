@@ -98,9 +98,11 @@
 
 // eyedropper
 - (WDColor *) colorAtPoint:(CGPoint)pt;
+- (void) displayEyedropper;
 - (void) displayEyedropperAtPoint:(CGPoint)pt;
 - (void) moveEyedropperToPoint:(CGPoint)pt;
 - (void) dismissEyedropper;
+- (void) longPress:(UIGestureRecognizer*)gestureRecognizer;
 
 - (void) resetUserSpacePivot;
 - (void) resetDeviceSpacePivot;
