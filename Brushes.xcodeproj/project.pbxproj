@@ -67,6 +67,9 @@
 		65B6DAEE1FEA8D83003E68A5 /* fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6DAEC1FEA8D82003E68A5 /* fill.png */; };
 		65B6DAF41FEAA2C9003E68A5 /* eyedropper.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6DAF21FEAA2C9003E68A5 /* eyedropper.png */; };
 		65B6DAF51FEAA2C9003E68A5 /* eyedropper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6DAF31FEAA2C9003E68A5 /* eyedropper@2x.png */; };
+		65B6DAF81FEAC833003E68A5 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B6DAF71FEAC833003E68A5 /* AssetsLibrary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		65B6DAFA1FEAC840003E68A5 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B6DAF91FEAC83F003E68A5 /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		65B6DAFC1FEAC88C003E68A5 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B6DAFB1FEAC88C003E68A5 /* PhotosUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6B00DA531405F65F00E45409 /* WDActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA521405F65E00E45409 /* WDActivity.m */; };
 		6B00DA5A1406022B00E45409 /* WDActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA591406022B00E45409 /* WDActivityManager.m */; };
 		6B00DA5D140604CE00E45409 /* WDActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B00DA5C140604CE00E45409 /* WDActivityController.m */; };
@@ -536,6 +539,9 @@
 		65B6DAEC1FEA8D82003E68A5 /* fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fill.png; sourceTree = "<group>"; };
 		65B6DAF21FEAA2C9003E68A5 /* eyedropper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eyedropper.png; path = Images/tools/eyedropper.png; sourceTree = "<group>"; };
 		65B6DAF31FEAA2C9003E68A5 /* eyedropper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eyedropper@2x.png"; path = "Images/tools/eyedropper@2x.png"; sourceTree = "<group>"; };
+		65B6DAF71FEAC833003E68A5 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		65B6DAF91FEAC83F003E68A5 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		65B6DAFB1FEAC88C003E68A5 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		6B00DA511405F65E00E45409 /* WDActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivity.h; sourceTree = "<group>"; };
 		6B00DA521405F65E00E45409 /* WDActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDActivity.m; sourceTree = "<group>"; };
 		6B00DA581406022B00E45409 /* WDActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActivityManager.h; sourceTree = "<group>"; };
@@ -1065,6 +1071,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B6DAFC1FEAC88C003E68A5 /* PhotosUI.framework in Frameworks */,
+				65B6DAFA1FEAC840003E68A5 /* Photos.framework in Frameworks */,
+				65B6DAF81FEAC833003E68A5 /* AssetsLibrary.framework in Frameworks */,
 				29E41AC213F9B229000C3305 /* libz.dylib in Frameworks */,
 				29FF9389145223600000B6BB /* AudioToolbox.framework in Frameworks */,
 				6BD7072012AD011F004E07C9 /* CoreGraphics.framework in Frameworks */,
@@ -1159,6 +1168,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65B6DAFB1FEAC88C003E68A5 /* PhotosUI.framework */,
+				65B6DAF91FEAC83F003E68A5 /* Photos.framework */,
+				65B6DAF71FEAC833003E68A5 /* AssetsLibrary.framework */,
 				CF8513DB1A75836B00F456A9 /* Crashlytics.framework */,
 				29E41AC113F9B229000C3305 /* libz.dylib */,
 				6BDB83C11593CDC10037E10B /* T1PogoManager */,

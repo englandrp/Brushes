@@ -88,6 +88,7 @@ typedef enum {
 @property (nonatomic) WDProgressView *progressIndicator;
 @property (nonatomic) NSArray *editingTopBarItems;
 @property (nonatomic) BOOL popoverVisible;
+@property (nonatomic, strong) UIPopoverController *popOver;
 
 @property (nonatomic, readonly) BOOL runningOnPhone;
 @property (nonatomic) WDInterfaceMode interfaceMode;
