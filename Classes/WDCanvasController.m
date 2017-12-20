@@ -1066,6 +1066,48 @@
     }
 }
 
+- (WDBarItem *) addTool0:(NSArray *)inTools
+{
+    // build tool buttons
+    CGRect buttonRect = CGRectMake(0, 0, 36, 36);
+
+    WDToolButton *button = [WDToolButton buttonWithType:UIButtonTypeCustom];
+    
+    button.frame = buttonRect;
+    [button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+    button.adjustsImageWhenHighlighted = NO;
+    
+    button.tool = inTools[0];
+    if (inTools[0] == [WDActiveState sharedInstance].activeTool) {
+        button.selected = YES;
+    }
+    
+    WDBarItem *item = [WDBarItem barItemWithView:button];
+    return item;
+
+}
+
+- (WDBarItem *) addTool1:(NSArray *)inTools
+{
+    // build tool buttons
+    CGRect buttonRect = CGRectMake(0, 0, 36, 36);
+    
+    WDToolButton *button = [WDToolButton buttonWithType:UIButtonTypeCustom];
+    
+    button.frame = buttonRect;
+    [button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+    button.adjustsImageWhenHighlighted = NO;
+    
+    button.tool = inTools[1];
+    if (inTools[1] == [WDActiveState sharedInstance].activeTool) {
+        button.selected = YES;
+    }
+    
+    WDBarItem *item = [WDBarItem barItemWithView:button];
+    return item;
+    
+}
+
 - (NSArray *) editingTopBarItems
 {
     if (!editingTopBarItems) {
@@ -1204,10 +1246,10 @@
 
     layer_ = [WDBarItem barItemWithImage:[self layerImage] target:self action:@selector(showLayers:)];
     
-    WDBarItem *brushItem = [WDBarItem barItemWithImage:[UIImage imageNamed:@"style.png"]
-                                        landscapeImage:[UIImage imageNamed:@"styleLandscape.png"]
-                                                target:self
-                                                action:@selector(showBrushPanel:)];
+//    WDBarItem *brushItem = [WDBarItem barItemWithImage:[UIImage imageNamed:@"style.png"]
+//                                        landscapeImage:[UIImage imageNamed:@"styleLandscape.png"]
+//                                                target:self
+//                                                action:@selector(showBrushPanel:)];
     
     WDBarItem *oldStyleBrushItem = [WDBarItem barItemWithImage:[UIImage imageNamed:@"style.png"]
                                         landscapeImage:[UIImage imageNamed:@"styleLandscape.png"]
@@ -1236,7 +1278,6 @@
     if (self.runningOnPhone) {
         items = [NSMutableArray arrayWithObjects:
                  colorItem, [WDBarItem flexibleItem],
-//                 brushItem, [WDBarItem flexibleItem],
                  oldStyleBrushItem, [WDBarItem flexibleItem],
                  undo_, [WDBarItem flexibleItem],
                  redo_, [WDBarItem flexibleItem],
@@ -1246,13 +1287,15 @@
     } else {
         items = [NSMutableArray arrayWithObjects:
                  colorItem, [WDBarItem flexibleItem], nil];
+    
         
-        [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
-        
-        [items addObjectsFromArray:@[[WDBarItem flexibleItem],
-//                                    brushItem, [WDBarItem flexibleItem],
-                                    oldStyleBrushItem, [WDBarItem flexibleItem],
-                                    brushSizeItem, [WDBarItem flexibleItem],
+        [items addObjectsFromArray:@[
+                                     [WDBarItem flexibleItem], fixed,
+                                     [self addTool0:[WDActiveState sharedInstance].tools], fixed, fixed,
+                                     oldStyleBrushItem, fixed, fixed,
+                                     [self addTool1:[WDActiveState sharedInstance].tools], fixed,
+                                     [WDBarItem flexibleItem],
+//                                    brushSizeItem, [WDBarItem flexibleItem],
                                     undo_, fixed,
                                     redo_, fixed,
                                     gear_, fixed,
